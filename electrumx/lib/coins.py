@@ -1797,6 +1797,31 @@ class Bitzeny(Coin):
         return zny_yespower_0_5.getPoWHash(header)
 
 
+class CranePay(Coin):
+    NAME = "CranePay"
+    SHORTNAME = "CRP"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488b21e")
+    XPRV_VERBYTES = bytes.fromhex("0488ade4")
+    P2PKH_VERBYTE = bytes.fromhex("51")
+
+    GENESIS_HASH = ('0000012e8bd27f12a29f3433086c04e5'
+                    '4d9348bc8c405a7084849a1d053134ef')
+    DESERIALIZER = lib_tx.DeserializerSegWit
+    TX_COUNT = 1
+    TX_COUNT_HEIGHT = 1
+    TX_PER_BLOCK = 1
+    RPC_PORT = 48887
+    REORG_LIMIT = 1000
+
+    @classmethod
+    def header_hash(cls, header):
+        '''Given a header return the hash.'''
+        import crp_yespower_1_0
+        return crp_yespower_1_0.getPoWHash(header)
+
+
+
 class CanadaeCoin(AuxPowMixin, Coin):
     NAME = "CanadaeCoin"
     SHORTNAME = "CDN"
