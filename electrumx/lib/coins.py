@@ -1803,7 +1803,9 @@ class CranePay(Coin):
     NET = "mainnet"
     XPUB_VERBYTES = bytes.fromhex("0488b21e")
     XPRV_VERBYTES = bytes.fromhex("0488ade4")
-    P2PKH_VERBYTE = bytes.fromhex("51")
+    P2PKH_VERBYTE = bytes.fromhex("1C")
+    P2SH_VERBYTES = bytes.fromhex("0A")
+    WIF_BYTE = bytes.fromhex("7B")
 
     GENESIS_HASH = ('0000012e8bd27f12a29f3433086c04e5'
                     '4d9348bc8c405a7084849a1d053134ef')
